@@ -1,0 +1,135 @@
+.home-container {
+  align-items: center;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 28px;
+  min-height: 100vh;
+  margin: 0;
+  padding: 76px 7vw 32px;
+  width: 100%;
+}
+
+.home-main {
+  align-items: center;
+  display: flex;
+  gap: 42px;
+  justify-content: center;
+  max-width: 900px;
+  width: 100%;
+}
+
+.home-content {
+  max-width: 620px;
+  text-align: left;
+}
+
+.home-title {
+  font-size: 3.4rem;
+  font-weight: bold;
+  color: #e50914; /* Netflix red */
+  line-height: 1.05;
+  margin: 0;
+}
+
+.home-subtitle {
+  font-size: 1.5rem;
+  color: #ccc;
+  margin-top: 8px;
+  margin-bottom: 0;
+}
+
+.home-roles {
+  line-height: 1.4;
+  margin-top: 14px;
+  font-size: 1.2rem;
+  color: #fff;
+  min-height: 40px; /* keeps space stable while text animates */
+}
+
+.home-roles .Typewriter__wrapper,
+.home-roles .Typewriter__cursor {
+  display: inline;
+  margin: 0;
+}
+
+.home-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 0;
+}
+
+.home-actions .btn {
+  margin: 0 !important;
+}
+
+.home-image-wrap {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  height:150px;
+  width: 150px;
+}
+
+.home-image {
+  aspect-ratio: 1;
+  border: 3px solid #e50914;
+  border-radius: 50%;
+  box-shadow: 0 0 0 8px rgba(229, 9, 20, 0.08), 0 18px 45px rgba(229, 9, 20, 0.18);
+  display: block;
+  max-width: 100%;
+  object-fit: cover;
+  object-position: center top;
+  width: clamp(170px, 18vw, 230px);
+}
+
+@media (max-width: 767px) {
+  .home-container {
+    gap: 22px;
+    padding: 68px 20px 28px;
+    text-align: center;
+  }
+
+  .home-main {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .home-content {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .home-image {
+    box-shadow: 0 0 0 7px rgba(229, 9, 20, 0.08), 0 14px 32px rgba(229, 9, 20, 0.16);
+    width: min(54vw, 190px);
+  }
+
+  .home-actions {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 575px) {
+  .home-title {
+    font-size: 2.35rem;
+  }
+
+  .home-subtitle {
+    font-size: 1.15rem;
+  }
+
+  .home-actions {
+    width: 100%;
+  }
+
+  .home-actions .btn {
+    width: 100%;
+  }
+}
