@@ -1,0 +1,18 @@
+.certificates-container {
+  background-color: #000; /* Dark theme */
+  color: #fff;
+  padding: 0 16px;
+}
+
+.certificates-title {
+  color: #e50914; /* Netflix red accent */
+  font-weight: bold;
+  margin-bottom: 28px !important;
+}
+
+.certificates-container .row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  row-gap: 4px;
+}

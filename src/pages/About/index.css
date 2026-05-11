@@ -1,0 +1,71 @@
+.about-section {
+  background-color: #000;
+  color: #fff;
+  padding: 0 16px;
+}
+
+.section-title {
+  color: #e50914; /* Netflix red */
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.about-section > p {
+  color: #d7d7d7;
+  line-height: 1.75;
+  margin: 0 auto;
+  max-width: 980px;
+  text-align: center;
+}
+
+.about-philosophy {
+  border-radius: 8px;
+  margin: 28px auto 36px;
+  max-width: 980px;
+  padding: 24px;
+}
+
+.skills-section {
+  padding-top: 8px;
+}
+
+.skill-category {
+  padding: 24px 0 8px;
+}
+
+.skill-category h3 {
+  margin-bottom: 18px !important;
+}
+
+.card {
+  background-color: #000;
+  color: #fff;
+  border: 1px solid #222;
+  border-radius: 10px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+}
+
+.card-title {
+  color: #e50914;
+}
+
+.card-text {
+  color: #ccc;
+}
+
+@media (max-width: 575px) {
+  .about-section {
+    padding: 0 12px;
+  }
+
+  .about-philosophy {
+    margin: 22px auto 28px;
+    padding: 18px;
+  }
+}

@@ -1,0 +1,56 @@
+/* Navbar logo styling */
+.portfolio-navbar {
+  margin: 0;
+  padding: 0 !important;
+}
+
+.header-inner {
+  align-items: center;
+  display: flex;
+  margin: 0;
+  padding: 6px 0;
+  width: 100%;
+}
+
+.logo {
+  margin: 0;
+  padding-left: 0;
+}
+
+.logo-text {
+  border: 2px solid #e50914; /* Netflix red border */
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-weight: bold;
+  color: #e50914;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.logo-text:hover {
+  background-color: #e50914;
+  color: #fff;
+}
+
+/* Nav links */
+.nav-link {
+  color: #ccc !important;
+  margin: 0 8px;
+  padding: 6px 0 !important;
+  cursor: pointer;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+.navbar-toggler {
+  margin-right: 0;
+}
+
+.nav-link:hover {
+  color: #fff !important;
+  border-bottom: 2px solid #e50914;
+}
+
+/* Active section highlight */
+.nav-link.active {
+  color: #e50914 !important;
+  border-bottom: 2px solid #e50914;
+}

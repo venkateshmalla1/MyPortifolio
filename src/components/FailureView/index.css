@@ -1,0 +1,29 @@
+.failure-view {
+  align-items: center;
+  border: 1px solid rgba(229, 9, 20, 0.35);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: 560px;
+  padding: 32px 24px;
+  text-align: center;
+}
+
+.failure-icon {
+  color: #e50914;
+  font-size: 44px;
+  margin-bottom: 16px;
+}
+
+.failure-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.failure-message {
+  color: #ccc;
+  font-size: 0.95rem;
+  margin: 0;
+}
