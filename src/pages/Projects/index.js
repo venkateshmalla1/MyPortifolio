@@ -54,7 +54,7 @@ const Projects = () => {
         )}
         {apiStatus === apiConstants.success && (
           projects.map((project) => (
-            <ProjectCard key={project.id} projectDetails={project} />
+            <ProjectCard key={project._id || project.id || project.title} projectDetails={project} />
           ))
         )}
         {apiStatus === apiConstants.failure && <FailureView />}
