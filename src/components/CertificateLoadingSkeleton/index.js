@@ -1,7 +1,7 @@
 import React from "react";
 import './index.css';
 
-const CertificateCardLoadingSkeleton = () => {
+const CertificateLoadingSkeletonView = () => {
   return (
     <div className="col-12 col-md-6 col-lg-4 mb-4">
       <div className="card bg-dark text-light shadow-lg h-100 skeleton-card">
@@ -18,4 +18,4 @@ const CertificateCardLoadingSkeleton = () => {
   );
 };
 
-export default CertificateCardLoadingSkeleton;
+export default CertificateLoadingSkeletonView;
