@@ -1,9 +1,5 @@
 {
-<<<<<<< HEAD
-  "name": "portifolio",
-=======
   "name": "my-portfolio",
->>>>>>> e703cee (Initialize project using Create React App)
   "version": "0.1.0",
   "private": true,
   "dependencies": {
