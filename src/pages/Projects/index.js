@@ -11,13 +11,6 @@ const apiConstants = {
   failure: 'FAILURE'
 };
 
-const getProjectsList = (data) => {
-  if (Array.isArray(data)) return data;
-  if (Array.isArray(data?.projects)) return data.projects;
-  if (Array.isArray(data?.data)) return data.data;
-  return [];
-};
-
 const Projects = () => {
   const [projects, setProjects] = useState([]);
   const [apiStatus, setApiStatus] = useState(apiConstants.initial);
@@ -31,10 +24,9 @@ const Projects = () => {
         const data = await response.json();
 
         if (response.ok) {
-          const projectsList = getProjectsList(data);
           // Add 3-second delay before showing success
           setTimeout(() => {
-            setProjects(projectsList);
+            setProjects(data);
             setApiStatus(apiConstants.success);
           }, 3000);
         } else {
@@ -50,7 +42,7 @@ const Projects = () => {
   }, []);
 
   return (
-    <div className="container projects-container">
+    <div className="container py-5 projects-container">
       <h2 className="text-center mb-4 projects-title">My Projects</h2>
       <div className="row">
         {apiStatus === apiConstants.loading && (
@@ -60,12 +52,11 @@ const Projects = () => {
             ))}
           </>
         )}
-        {apiStatus === apiConstants.success && projects.length > 0 && (
+        {apiStatus === apiConstants.success && (
           projects.map((project) => (
-            <ProjectCard key={project.id || project._id || project.title} projectDetails={project} />
+            <ProjectCard key={project.id} projectDetails={project} />
           ))
         )}
-        {apiStatus === apiConstants.success && projects.length === 0 && <FailureView />}
         {apiStatus === apiConstants.failure && <FailureView />}
       </div>
     </div>

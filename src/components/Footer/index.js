@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <footer className="footer bg-dark text-light">
       <div className="footer-content">
-        <p>&copy; 2026 Divakar</p>
+        <p>&copy; 2026 MAlla Venkatesh. All rights reserved.</p>
         <div className="footer-icons">
           <a href="https://wa.me/917411064722" target="_blank" rel="noopener noreferrer" className="footer-icon">
             <FaWhatsapp />

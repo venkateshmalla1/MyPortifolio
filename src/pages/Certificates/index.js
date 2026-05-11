@@ -11,13 +11,6 @@ const apiConstants = {
   failure: 'FAILURE'
 };
 
-const getCertificatesList = (data) => {
-  if (Array.isArray(data)) return data;
-  if (Array.isArray(data?.certificates)) return data.certificates;
-  if (Array.isArray(data?.data)) return data.data;
-  return [];
-};
-
 const Certificates = () => {
   const [certificates, setCertificates] = useState([]);
   const [apiStatus, setApiStatus] = useState(apiConstants.initial);
@@ -31,10 +24,9 @@ const Certificates = () => {
         const data = await response.json();
 
         if (response.ok) {
-          const certificatesList = getCertificatesList(data);
           // Add 3-second delay before showing success
           setTimeout(() => {
-            setCertificates(certificatesList);
+            setCertificates(data);
             setApiStatus(apiConstants.success);
           }, 3000);
         } else {
@@ -50,7 +42,7 @@ const Certificates = () => {
   }, []);
 
   return (
-    <div className="container certificates-container">
+    <div className="container py-5 certificates-container">
       <h2 className="text-center mb-4 certificates-title">My Certificates</h2>
       <div className="row">
         {apiStatus === apiConstants.loading && (
@@ -60,12 +52,11 @@ const Certificates = () => {
             ))}
           </>
         )}
-        {apiStatus === apiConstants.success && certificates.length > 0 && (
+        {apiStatus === apiConstants.success && (
           certificates.map((certificate) => (
-            <CertificateCard key={certificate.id || certificate._id || certificate.title} certificateDetails={certificate} />
+            <CertificateCard key={certificate.id} certificateDetails={certificate} />
           ))
         )}
-        {apiStatus === apiConstants.success && certificates.length === 0 && <FailureView />}
         {apiStatus === apiConstants.failure && <FailureView />}
       </div>
     </div>
