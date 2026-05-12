@@ -46,7 +46,7 @@ const Home = () => {
           Connect on LinkedIn
         </a>
         <a 
-          href="/resume.pdf" 
+          href="https://drive.google.com/u/0/uc?id=1G04vxrKkvTwQO783xaRhlk2tkFrXMzfR&export=download" 
           download 
           className="btn btn-outline-light"
         >
