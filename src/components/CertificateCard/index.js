@@ -38,11 +38,14 @@ const CertificateCard = ({ certificateDetails }) => {
           alt={certificateTitle} 
           className="card-img-top img-fluid certificate-thumbnail" 
         />
-        <div className="card-body">
+        <div className="card-body d-flex flex-column justify-content-between certificate-card-body">
+          <div>
           <h5 className="card-title text-danger">{certificateTitle}</h5>
           <p className="card-text"><strong>Issued by:</strong> {certificateIssuer || 'Not specified'}</p>
           <p className="card-text"><strong>Issued on:</strong> {certificateDate || 'Not specified'}</p>
           <p className="card-text"><strong>Technologies:</strong> {technologiesText || 'Not specified'}</p>
+          </div>
+          <div className="mt-4">
           <a 
             href={certificateVerificationUrl} 
             target="_blank" 
@@ -51,6 +54,7 @@ const CertificateCard = ({ certificateDetails }) => {
           >
             Verify Certificate
           </a>
+          </div>
         </div>
       </div>
     </div>

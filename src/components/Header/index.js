@@ -9,7 +9,7 @@ const Header = () => {
         <Navbar.Brand href="#home" className="logo">
           <span className="logo-text">MV</span>
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Toggle aria-controls="basic-navbar-nav p-3" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
             {['Home', 'About', 'Projects', 'Certificates', 'Contact'].map((item) => (
