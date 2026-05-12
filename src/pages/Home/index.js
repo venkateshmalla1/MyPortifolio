@@ -16,8 +16,6 @@ const Home = () => {
 
         <div className="home-content">
           <h1 className="home-title">Malla Venkatesh</h1>
-          <p className="home-subtitle">Welcome to my portfolio</p>
-
           <div className="home-roles">
             <Typewriter
               options={{
@@ -34,6 +32,7 @@ const Home = () => {
               }}
             />
           </div>
+          <p className="home-subtitle">Welcome to my portfolio</p>
         </div>
       </div>
 
