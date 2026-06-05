@@ -19,14 +19,18 @@ const Certificates = () => {
     const fetchCertificates = async () => {
       setApiStatus(apiConstants.loading);
       try {
-        const getApiUrl = process.env.REACT_APP_BASE_API_URL;
+        const getApiUrl = process.env.REACT_APP_BASE_API_URL?.replace(/\/+$/, '');
+        if (!getApiUrl) {
+          throw new Error('REACT_APP_BASE_API_URL is not configured');
+        }
+
         const response = await fetch(`${getApiUrl}/api/certificates`);
         const data = await response.json();
 
         if (response.ok) {
           // Add 3-second delay before showing success
           setTimeout(() => {
-            setCertificates(data);
+            setCertificates(Array.isArray(data) ? data : []);
             setApiStatus(apiConstants.success);
           }, 3000);
         } else {
@@ -54,7 +58,7 @@ const Certificates = () => {
         )}
         {apiStatus === apiConstants.success && (
           certificates.map((certificate) => (
-            <CertificateCard key={certificate.id} certificateDetails={certificate} />
+            <CertificateCard key={certificate._id || certificate.id || certificate.title} certificateDetails={certificate} />
           ))
         )}
         {apiStatus === apiConstants.failure && <FailureView />}

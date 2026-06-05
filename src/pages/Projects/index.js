@@ -19,14 +19,18 @@ const Projects = () => {
     const fetchProjects = async () => {
       setApiStatus(apiConstants.loading);
       try {
-        const getApiUrl = process.env.REACT_APP_BASE_API_URL;
+        const getApiUrl = process.env.REACT_APP_BASE_API_URL?.replace(/\/+$/, '');
+        if (!getApiUrl) {
+          throw new Error('REACT_APP_BASE_API_URL is not configured');
+        }
+
         const response = await fetch(`${getApiUrl}/api/projects`);
         const data = await response.json();
 
         if (response.ok) {
           // Add 3-second delay before showing success
           setTimeout(() => {
-            setProjects(data);
+            setProjects(Array.isArray(data) ? data : []);
             setApiStatus(apiConstants.success);
           }, 3000);
         } else {
